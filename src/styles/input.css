@@ -2,19 +2,8 @@
 
 @theme {
   --color-theme-darknight: #120f12;
-  --color-theme-dark-purple: #3a0a50;
-  --color-theme-midnigh-purple: #4e2c91;
-  --color-theme-dark-lavander: #9b79b0;
-  --color-theme-soft-purple: #d1c6e5;
+  --color-theme-dark-purple: #26192b;
   --color-theme-malva: #a67cba;
-  --color-theme-purple-light: #3e2b6f;
-
-  /* Darknight : #120f12 , (0.181, 0.057, 260.0)
-    Dark Purple: #3a0a50 , (0.178, 0.488, 298.0)
-    Midnight Purple: #4e2c91 , (0.375, 0.459, 244.0)
-    Dark Lavender: #9b79b0 , (0.588, 0.286, 265.0)
-    Soft Purple: #d1c6e5 , (0.786, 0.139, 257.0)
-    Malva: #a67cba , (0.612, 0.200, 265.0) */
 
   /* Paleta de colores 
     fondo: #120f12

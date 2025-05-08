@@ -1,5 +1,5 @@
 ---
-import { experiences } from "./tecnologies";
+import { experiences } from "../scripts/tecnologies";
 ---
 
 <div class="flex flex-col w-full py-6 gap-4">
@@ -8,8 +8,8 @@ import { experiences } from "./tecnologies";
   <div class="flex flex-row gap-4">
     {
       experiences.map((experiences) => (
-        <div class="px-4 py-2 bg-[#26192b] rounded-3xl">
-          <p class=" text-theme-malva">{experiences.company}</p>
+        <div class="px-4 py-2 bg-theme-dark-purple rounded-3xl">
+          <p class=" text-theme-malva font-medium">{experiences.company}</p>
         </div>
       ))
     }
