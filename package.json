@@ -2,6 +2,9 @@
   "name": "porfolio",
   "type": "module",
   "version": "0.0.1",
+   "exports": {
+    "./biome": "./biome.json"
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -12,5 +15,8 @@
     "@tailwindcss/cli": "^4.1.5",
     "astro": "^5.7.11",
     "tailwindcss": "^4.1.5"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4"
   }
 }
