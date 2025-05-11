@@ -1,65 +1,23 @@
 ---
-import ArticleIcon from "../../public/proyects/Article.astro";
-import GithubIcon from "../../public/proyects/Github.astro";
-import LinkIcon from "../../public/proyects/Link.astro";
+import proyects from "../scripts/proyects";
+import Cardproyects from "./Cardproyects.astro";
 ---
 
 <div class="flex flex-col w-full gap-6">
   <h1 class="text-white text-2xl font-bold">Proyectos</h1>
 
-  <div
-    class="flex flex-row w-full rounded-2xl shadow-theme-dark-purple shadow-xs justify-between"
-  >
-    <div class="flex flex-row gap-4">
-      <div
-        class="w-16 h-16 bg-theme-dark-purple rounded-full p-3 text-theme-malva"
-      >
-        <ArticleIcon class="text-theme-malva" />
+  {
+    proyects.map((proyecto) => (
+      <div>
+        <Cardproyects
+          title={proyecto.title}
+          owner={proyecto.owner}
+          description={proyecto.description}
+          tecnologies={proyecto.tecnologies}
+          links={proyecto.links}
+          img={proyecto.img}
+        />
       </div>
-
-      <div class="flex flex-col text-white gap-2">
-        <h2 class="font-semibold">Software random</h2>
-        <p>Software propiedad de Metacortex</p>
-        <p class="text-gray-400 text-sm">
-          Herramienta para hacer rico a otras personas.
-        </p>
-
-        <div class="flex flex-row">
-          <div class="flex bg-theme-gray rounded-2xl px-2">
-            <p class="text-gray-400 text-sm font-medium">NodeJS</p>
-          </div>
-          <div></div>
-          <div></div>
-        </div>
-
-        <div class="flex flex-row gap-2">
-          <a
-            href=""
-            class="flex bg-theme-dark-purple border border-theme-malva rounded-2xl px-12 py-1"
-          >
-            <div class="size-6">
-              <GithubIcon class="text-theme-malva" />
-            </div>
-          </a>
-
-          <a
-            href=""
-            class="flex bg-theme-dark-purple border border-theme-malva rounded-2xl px-12 py-1"
-          >
-            <div class="size-6">
-              <LinkIcon class="text-theme-malva" />
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="max-w-96 max-h-60">
-      <img
-        class="object-cover w-full h-full rounded-2xl"
-        src="/me/makis-hristaras-SkG3lysMrFo-unsplash.jpg"
-        alt=""
-      />
-    </div>
-  </div>
+    ))
+  }
 </div>
