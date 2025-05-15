@@ -1,7 +1,7 @@
 ---
-import ArticleIcon from "../../public/proyects/Article.astro";
-import GithubIcon from "../../public/proyects/Github.astro";
-import LinkIcon from "../../public/proyects/Link.astro";
+import ArticleIcon from "../../public/icons/Article.astro";
+import GithubIcon from "../../public/icons/Github.astro";
+import LinkIcon from "../../public/icons/Link.astro";
 
 interface Props {
   title: string;
@@ -15,7 +15,7 @@ const { title, owner, description, tecnologies, links, img } = Astro.props;
 ---
 
 <div
-  class="flex flex-row w-full rounded-2xl shadow-theme-dark-purple shadow-xs justify-between"
+  class="flex flex-row w-full rounded-2xl shadow-theme-dark-purple shadow-xs justify-between pb-4 px-4"
 >
   <div class="flex flex-row gap-4">
     <div

@@ -1,14 +1,63 @@
+// Backend Tecnologies
+import NodeJS from '../../public/icons/tecnologies/NodeJS.astro'
+import NestJS from '../../public/icons/tecnologies/NestJS.astro'
+import Express from '../../public/icons/tecnologies/Express.astro'
+
+
+// Frontend Tecnologies
+import React from '../../public/icons/tecnologies/React.astro'
+import NextJS from '../../public/icons/tecnologies/NextJS.astro'
+import AstroIcon from '../../public/icons/tecnologies/AstroIcon.astro'
+
+
+// General Tecnologies
+import JavaScript from '../../public/icons/tecnologies/JavaScript.astro'
+import TypeScript from '../../public/icons/tecnologies/TypeScript.astro'
+
+// Database Tecnologies
+import PostgreSQL from '../../public/icons/tecnologies/PostgreSQL.astro'
+import MySQL from '../../public/icons/tecnologies/MySQL.astro'
+
 export const experiences = [
   {
-    company: 'Metacortex',
-    role: 'Programador',
-    description: 'Programa software respetable desde un cubículo.',
-    year: '1999 - Actualidad',
+    tecnologie: 'NodeJS',
+    icon: NodeJS
   },
   {
-    company: 'Nebuchadnezzar',
-    role: 'El Elegido',
-    description: 'Me encargo de salvar el mundo.',
-    year: '1999 - Actualidad',
+    tecnologie: 'NestJS',
+    icon: NestJS
+  },  
+  {
+    tecnologie: 'Express',
+    icon: Express
   },
+  {
+    tecnologie: 'React',
+    icon: React
+  },
+  {
+    tecnologie: 'NextJS',
+    icon: NextJS
+  },
+  {
+    tecnologie: 'AstroIcon',
+    icon: AstroIcon
+  },
+  {
+    tecnologie: 'JavaScript',
+    icon: JavaScript
+  },
+  {
+    tecnologie: 'TypeScript',
+    icon: TypeScript
+  },
+  {
+    tecnologie: 'PostgreSQL',
+    icon: PostgreSQL
+  },
+  {
+    tecnologie: 'MySQL',
+    icon: MySQL
+  },
+
 ];

@@ -17,10 +17,6 @@ importers:
       tailwindcss:
         specifier: ^4.1.5
         version: 4.1.5
-    devDependencies:
-      '@biomejs/biome':
-        specifier: 1.9.4
-        version: 1.9.4
 
 packages:
 

@@ -1,0 +1,42 @@
+---
+import ArticleIcon from "../../public/icons/Article.astro";
+
+interface Props {
+  title: string;
+  charge: string;
+  performance: string;
+  start: string;
+  since?: string;
+}
+const { title, charge, performance, start, since } = Astro.props;
+---
+
+<div class="flex flex-row w-full gap-4">
+  <div class="w-16 h-16 bg-theme-dark-purple rounded-full p-3 text-theme-malva">
+    <ArticleIcon class="text-theme-malva" />
+  </div>
+
+  <div class="flex flex-col text-white gap-2 max-w-full">
+    <h1 class="font-semibold">{title}</h1>
+    <p>{charge}</p>
+    <p class="text-gray-400 text-sm">
+      {performance}
+    </p>
+  </div>
+
+  <div class="ml-auto">
+    <div
+      class="text-theme-malva bg-theme-dark-purple max-h-fit min-w-fit w-full px-2 rounded-2xl text-sm font-medium"
+    >
+      {
+        since ? (
+          <p>
+            {start} - {since}
+          </p>
+        ) : (
+          <p>{start}</p>
+        )
+      }
+    </div>
+  </div>
+</div>
