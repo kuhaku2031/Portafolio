@@ -17,6 +17,7 @@ import TypeScript from '../../public/icons/tecnologies/TypeScript.astro'
 // Database Tecnologies
 import PostgreSQL from '../../public/icons/tecnologies/PostgreSQL.astro'
 import MySQL from '../../public/icons/tecnologies/MySQL.astro'
+import PHP from 'public/icons/tecnologies/PHP.astro'
 
 export const experiences = [
   {
@@ -54,10 +55,13 @@ export const experiences = [
   {
     tecnologie: 'PostgreSQL',
     icon: PostgreSQL
-  },
+  },  
   {
     tecnologie: 'MySQL',
     icon: MySQL
   },
-
+  {
+    tecnologie: 'php',
+    icon: PHP
+  },
 ];

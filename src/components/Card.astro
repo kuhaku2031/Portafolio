@@ -1,42 +1,72 @@
 ---
-import ArticleIcon from "../../public/icons/Article.astro";
+import Qrender from "public/icons/experience/Qrender.astro";
+import Ticketserve from "public/icons/experience/Ticketserve.astro";
 
+// Definicion de los props o las propiedades que va a pedir este componente
 interface Props {
   title: string;
   charge: string;
   performance: string;
   start: string;
   since?: string;
+  iconName: string;
 }
-const { title, charge, performance, start, since } = Astro.props;
+
+const { title, charge, performance, start, since, iconName } = Astro.props;
+
+
+// hacemos un mapeo de los iconos para futuramente usarlo
+const iconsMap: any = {
+  Qrender,
+  Ticketserve,
+};
+
+
+// Se guarda el icono que se encontro dentro del map con el nombre del icono extraido de los props 
+const IconComponent = iconsMap[iconName];
 ---
 
 <div class="flex flex-row w-full gap-4">
-  <div class="w-16 h-16 bg-theme-dark-purple rounded-full p-3 text-theme-malva">
-    <ArticleIcon class="text-theme-malva" />
+
+  <!-- Icono -->
+  <div>
+    <div
+      class="w-16 h-16 block bg-theme-dark-purple rounded-full p-3 text-theme-malva"
+    >
+      {IconComponent ? <IconComponent /> : null}
+    </div>
   </div>
 
-  <div class="flex flex-col text-white gap-2 max-w-full">
-    <h1 class="font-semibold">{title}</h1>
+  <!-- Body de toda la card con la informacion -->
+  <div class="flex flex-col text-white gap-2 max-w-full w-full">
+    
+    <!-- Titulo con las fechas -->
+    <div class="flex w-full">
+      <h1 class="font-semibold">{title}</h1>
+    
+      <div class="ml-auto">
+        <div
+          class="text-theme-malva bg-theme-dark-purple max-h-fit min-w-fit w-full px-2 rounded-2xl text-sm font-medium"
+        >
+
+        <!-- Fechas y se valida si existe una fecha final o solo una inicial -->
+          {
+            since ? (
+              <p>
+                {start} - {since}
+              </p>
+            ) : (
+              <p>{start}</p>
+            )
+          }
+        </div>
+      </div>
+    </div>
+
+    <!-- Cargo y descripcion de lo que se necesito o se hizo -->
     <p>{charge}</p>
     <p class="text-gray-400 text-sm">
       {performance}
     </p>
-  </div>
-
-  <div class="ml-auto">
-    <div
-      class="text-theme-malva bg-theme-dark-purple max-h-fit min-w-fit w-full px-2 rounded-2xl text-sm font-medium"
-    >
-      {
-        since ? (
-          <p>
-            {start} - {since}
-          </p>
-        ) : (
-          <p>{start}</p>
-        )
-      }
-    </div>
   </div>
 </div>

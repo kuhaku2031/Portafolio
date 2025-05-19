@@ -3,35 +3,47 @@ import FileIcon from "../../public/icons/File.astro";
 import GithubIcon from "../../public/icons/Github.astro";
 import LinkIcon from "../../public/icons/Link.astro";
 import LinkedinIcon from "../../public/icons/Linkedin.astro";
+
+const email = "juanmanuelcontreraszapata33@gmail.com";
+const cv = "../../public/cv/hooa.pdf";
+
 ---
 
 <div class="flex flex-row gap-2">
-  <div>
-    <a
-      href={""}
-      class="flex flex-row gap-2 bg-theme-malva border border-theme-malva rounded-2xl px-4 py-1"
+
+  <!-- Parte del correo -->
+  <div class="flex cursor-pointer">
+    <button
+      id="copy-email-btn"
+      class="flex flex-row gap-2 bg-theme-malva border border-theme-malva rounded-2xl px-4 py-1 cursor-pointer"
+      type="button"
     >
       <div class="size-6">
         <LinkIcon class="text-white" />
       </div>
-      <p class="text-sm font-medium align-middle text-white">
-        juanmanuelcontreraszapata33@gmail.com
+      <p class="text-sm font-medium align-middle text-white cursor-pointer">
+        {email}
       </p>
-    </a>
+    </button>
   </div>
+
+  <!-- Parte del CV -->
   <div>
     <a
-      href={""}
+      href={cv}
       class="flex bg-theme-dark-purple border border-theme-malva rounded-2xl px-3 py-1"
+      download={cv}
     >
       <div class="size-6">
         <FileIcon class="text-theme-malva" />
       </div>
     </a>
   </div>
+
+  <!-- Parte del github -->
   <div>
     <a
-      href={""}
+      href={"https://github.com/kuhaku2031"}
       class="flex bg-theme-dark-purple border border-theme-malva rounded-2xl px-3 py-1"
     >
       <div class="size-6">
@@ -39,9 +51,12 @@ import LinkedinIcon from "../../public/icons/Linkedin.astro";
       </div>
     </a>
   </div>
+
+
+  <!-- Parte del linkedin -->
   <div>
     <a
-      href={""}
+      href={"https://www.linkedin.com/in/juancontrerasz/"}
       class="flex bg-theme-dark-purple border border-theme-malva rounded-2xl px-3 py-1"
     >
       <div class="size-6">
@@ -50,3 +65,17 @@ import LinkedinIcon from "../../public/icons/Linkedin.astro";
     </a>
   </div>
 </div>
+
+<script>
+  const btn = document.getElementById('copy-email-btn');
+  if (btn) {
+    btn.addEventListener('click', () => {
+      navigator.clipboard.writeText("juanmanuelcontreraszapata33@gmail.com").then(
+        () => {
+          alert("Correo copiado en el portapapeles");
+        },
+        () => alert("No se pudo copiar el correo al portapapeles")
+      );
+    });
+  }
+</script>

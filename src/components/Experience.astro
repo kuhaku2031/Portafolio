@@ -5,7 +5,6 @@ import Card from "./Card.astro";
 
 <div class="flex flex-col w-full gap-6 my-6">
   <h1 class="text-white text-2xl font-bold">Experiencia</h1>
-
   {
     experiences.map((experience) => (
       <Card
@@ -14,6 +13,7 @@ import Card from "./Card.astro";
         performance={experience.performance}
         start={experience.start}
         since={experience.since}
+        iconName={experience.icon}
       />
     ))
   }
