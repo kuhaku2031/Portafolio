@@ -32,6 +32,10 @@ export const experiences = [
     tecnologie: 'Express',
     icon: Express
   },
+    {
+    tecnologie: 'php',
+    icon: PHP
+  },
   {
     tecnologie: 'React',
     icon: React
@@ -60,8 +64,5 @@ export const experiences = [
     tecnologie: 'MySQL',
     icon: MySQL
   },
-  {
-    tecnologie: 'php',
-    icon: PHP
-  },
+
 ];

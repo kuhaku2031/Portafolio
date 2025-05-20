@@ -1,6 +1,8 @@
 ---
 import Qrender from "public/icons/experience/Qrender.astro";
 import Ticketserve from "public/icons/experience/Ticketserve.astro";
+import School from "public/icons/studies/School.astro";
+import University from "public/icons/studies/University.astro";
 
 // Definicion de los props o las propiedades que va a pedir este componente
 interface Props {
@@ -17,6 +19,8 @@ const { title, charge, performance, start, since, iconName } = Astro.props;
 
 // hacemos un mapeo de los iconos para futuramente usarlo
 const iconsMap: any = {
+  School,
+  University,
   Qrender,
   Ticketserve,
 };

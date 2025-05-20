@@ -1,19 +1,20 @@
 ---
-import experiences from "../scripts/Experience";
+import studies from "@/scripts/studies";
 import Card from "./Card.astro";
 ---
 
 <div class="flex flex-col w-full gap-6 my-6">
-  <h1 class="text-white text-2xl font-bold">Experiencia</h1>
+  <h1 class="text-white text-2xl font-bold">Formación</h1>
 
   {
-    experiences.map((experience) => (
+    studies.map((studies) => (
       <Card
-        title={experience.title}
-        charge={experience.charge}
-        performance={experience.performance}
-        start={experience.start}
-        since={experience.since}
+        title={studies.title}
+        charge={studies.charge}
+        performance={studies.performance}
+        start={studies.start}
+        since={studies.since}
+        iconName={studies.iconName}
       />
     ))
   }

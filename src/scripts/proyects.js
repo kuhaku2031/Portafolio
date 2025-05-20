@@ -3,7 +3,7 @@ const proyects = [
     title: 'Api-Backend',
     owner: 'Backend',
     description: 'Esta es un api-bakcend de registro de producto de tiendas, tanto como la posibilidad de escalabilidad y facilidad de uso',
-    tecnologies: ["NodeJS","NestJS","TypeScript","JavaScript"],
+    tecnologies: ["NodeJS","NestJS","TypeScript","JavaScript","PostgresSQL"],
     links: ["https://github.com/kuhaku2031/api-backend.git","https://github.com/kuhaku2031/api-backend.git"],
     img:"/me/makis-hristaras-SkG3lysMrFo-unsplash.jpg" 
   },
