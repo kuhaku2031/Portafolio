@@ -1,0 +1,162 @@
+import { useState } from "react"
+import { Card, CardContent } from "@/src/components/ui/card"
+import { Button } from "@/src/components/ui/button"
+import { Input } from "@/src/components/ui/input"
+import { Textarea } from "@/src/components/ui/textarea"
+import { Label } from "@/src/components/ui/label"
+import { Mail, Github, Linkedin, Send, CheckCircle2 } from "lucide-react"
+import { Toaster } from "@/src/components/ui/sonner"
+
+
+export function Contact() {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSuccess, setIsSuccess] = useState(false)
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+
+    // Simulate form submission
+    await new Promise((resolve) => setTimeout(resolve, 1500))
+
+    setIsSubmitting(false)
+    setIsSuccess(true)
+
+    setTimeout(() => setIsSuccess(false), 3000)
+  }
+
+  return (
+    <>
+      <section id="contacto" className="py-20 sm:py-28 relative overflow-hidden">
+        {/* Background gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-accent/10 to-secondary/20 opacity-50" />
+        <div className="absolute inset-0">
+          <div className="absolute w-96 h-96 top-0 right-0 bg-primary/10 rounded-full blur-3xl" />
+          <div className="absolute w-96 h-96 bottom-0 left-0 bg-accent/10 rounded-full blur-3xl" />
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-balance">¿Trabajamos juntos?</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Estoy disponible para proyectos full-time o freelance. ¡Hablemos de tu próximo proyecto!
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {/* Contact Form */}
+            <Card className="glass border-2">
+              <CardContent className="p-8">
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="name">Nombre</Label>
+                    <Input id="name" placeholder="Tu nombre" required className="bg-background/50" />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="email">Email</Label>
+                    <Input id="email" type="email" placeholder="tu@email.com" required className="bg-background/50" />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="message">Mensaje</Label>
+                    <Textarea
+                      id="message"
+                      placeholder="Cuéntame sobre tu proyecto..."
+                      rows={5}
+                      required
+                      className="bg-background/50 resize-none"
+                    />
+                  </div>
+                  <Button type="submit" className="w-full" size="lg" disabled={isSubmitting || isSuccess}>
+                    {isSuccess ? (
+                      <>
+                        <CheckCircle2 className="mr-2 h-5 w-5" />
+                        Enviado!
+                      </>
+                    ) : (
+                      <>
+                        <Send className="mr-2 h-5 w-5" />
+                        {isSubmitting ? "Enviando..." : "Enviar Mensaje"}
+                      </>
+                    )}
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+
+            {/* Contact Info */}
+            <div className="space-y-6">
+              <Card className="glass border-2 hover:border-primary/50 transition-colors">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 rounded-lg bg-primary/10 text-primary">
+                      <Mail className="h-6 w-6" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-lg mb-2">Email</h3>
+                      <a
+                        href="mailto:juanmanuelcontreraszapata33@gmail.com"
+                        className="text-muted-foreground hover:text-primary transition-colors break-all"
+                      >
+                        juanmanuelcontreraszapata33@gmail.com
+                      </a>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="glass border-2 hover:border-primary/50 transition-colors">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 rounded-lg bg-primary/10 text-primary">
+                      <Github className="h-6 w-6" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-lg mb-2">GitHub</h3>
+                      <a
+                        href="https://github.com/juanmanuel"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        github.com/juanmanuel
+                      </a>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="glass border-2 hover:border-primary/50 transition-colors">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 rounded-lg bg-primary/10 text-primary">
+                      <Linkedin className="h-6 w-6" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-lg mb-2">LinkedIn</h3>
+                      <a
+                        href="https://linkedin.com/in/juanmanuel"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        linkedin.com/in/juanmanuel
+                      </a>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <div className="p-6 rounded-lg bg-primary/5 border border-primary/20">
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  <strong className="text-foreground">Tiempo de respuesta:</strong> Generalmente respondo dentro de 24
+                  horas durante días laborables.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <Toaster />
+    </>
+  )
+}
