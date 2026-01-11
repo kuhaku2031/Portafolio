@@ -1,3 +1,4 @@
+import { Badge } from "@/src/components/ui/badge"
 import { techStack } from "@/src/scripts/tech-stack"
 import type React from "react"
 
@@ -12,16 +13,15 @@ export function TechStack() {
           </p>
         </div>
 
-        <div className="flex flex-wrap gap-8 justify-center">
+        <div className="flex flex-wrap gap-8 justify-center mb-4">
           {techStack.map((category) => (
             <div key={category.title} className="w-full md:w-1/2 lg:w-1/3 px-4 pt-8">
               <h3 className="text-2xl font-bold mb-6 border-b border-border pb-4">{category.title}</h3>
               <div className="flex flex-wrap gap-3">
                 {category.technologies.map((tech) => (
-                  <button
+                  <Badge
                     key={tech.name}
-                    type="button"
-                    className="group relative flex items-center gap-3 px-5 py-3 rounded-full border-2 border-border bg-background/80 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary cursor-pointer"
+                    className="group relative text-12 flex items-center gap-3 px-5 py-3 rounded-full border-2 border-border bg-background/80 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary cursor-pointer"
                     style={
                       {
                         "--tech-color": tech.color,
@@ -37,10 +37,10 @@ export function TechStack() {
                     }}
                   >
                     <div className="transition-colors duration-300" style={{ color: tech.color }}>
-                      <tech.icon />
+                      <tech.icon className="w-5 h-5"/>
                     </div>
                     <span className="text-sm font-medium">{tech.name}</span>
-                  </button>
+                  </Badge>
                 ))}
               </div>
             </div>

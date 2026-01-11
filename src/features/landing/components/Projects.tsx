@@ -97,7 +97,7 @@ export function Projects() {
                 className="group bg-jet-black h-auto overflow-hidden hover:shadow-xl py-0 transition-all duration-300 hover:-translate-y-1 border-2 hover:border-primary/50"
                 style={{ animationDelay: `${idx * 100}ms` }}
               >
-                <CardHeader className="px-0  max-h-80 md:h-auto">
+                <CardHeader className="px-0 max-h-100 md:h-auto">
                   <div className="relative h-full overflow-hidden bg-ash-grey group">
                     <img
                       src={project.image || "/placeholder.svg"}
