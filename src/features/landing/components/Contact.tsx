@@ -43,20 +43,20 @@ export function Contact() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {/* Contact Form */}
             <Card className="glass border-2">
               <CardContent className="p-8">
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="space-y-2">
+                  <div className="md:space-y-2">
                     <Label htmlFor="name" className="text-white">Nombre</Label>
                     <Input id="name" placeholder="Tu nombre" required className="bg-background/50 text-white"/>
                   </div>
-                  <div className="space-y-2">
+                  <div className="md:space-y-2">
                     <Label htmlFor="email" className="text-white">Email</Label>
                     <Input id="email" type="email" placeholder="tu@email.com" required className="bg-background/50 text-white" />
                   </div>
-                  <div className="space-y-2">
+                  <div className="md:space-y-2">
                     <Label htmlFor="message" className="text-white">Mensaje</Label>
                     <Textarea
                       id="message"
@@ -87,22 +87,23 @@ export function Contact() {
             <div className="space-y-6">
 
               {socialLinks.map((social) => (
-                 <Card key={social.name} className="glass border-2 hover:border-primary/50 transition-colors">
-                <CardContent className="p-6">
+              <Card key={social.name} className="glass border-2 hover:border-primary/50 transition-colors">
+                <CardContent className="p-6 ">
                   <div className="flex items-start gap-4">
                     <div className="p-3 rounded-lg bg-primary/10 text-primary">
                       <social.icon className="h-6 w-6" />
                     </div>
-                    <div>
-                      <h3 className="font-bold text-lg mb-2 text-white">{social.name}</h3>
+                    <div className="flex flex-wrap flex-col">
+                      <h3 className="font-bold text-sm md:text-lg mb-2 text-white">{social.name}</h3>
+                      <div className="flex flex-wrap gap-2 items-center wrap-break-word break-all truncate max-w-full">
                       <a
                         href={social.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-muted hover:text-primary transition-colors"
-                      >
+                        className="text-muted text-xs md:text-lg hover:text-primary transition-colors">
                           {social.name === "Gmail" ? social.url.replace("mailto:", "") : social.url.replace("https://", "")}
                       </a>
+                      </div>
                     </div>
                   </div>
                 </CardContent>
@@ -110,7 +111,7 @@ export function Contact() {
               ))}
 
               <div className="p-6 rounded-lg bg-primary/5 border border-primary/20">
-                <p className="text-sm text-muted leading-relaxed">
+                <p className="text-muted leading-relaxed text-xs md:text-lg">
                   <strong className="text-foreground">Tiempo de respuesta:</strong> Generalmente respondo dentro de 24
                   horas durante días laborables.
                 </p>
