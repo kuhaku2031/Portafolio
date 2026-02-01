@@ -16,7 +16,6 @@ export function Contact() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1500))
 
     setIsSubmitting(false)
@@ -29,7 +28,7 @@ export function Contact() {
     <>
       <section id="contacto" className="py-20 sm:py-28 relative overflow-hidden">
         {/* Background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-accent/10 to-secondary/20 opacity-50" />
+        <div className="absolute inset-0 bg-linear-to-br from-primary/20 via-accent/10 to-secondary/20 opacity-50" />
         <div className="absolute inset-0">
           <div className="absolute w-96 h-96 top-0 right-0 bg-primary/10 rounded-full blur-3xl" />
           <div className="absolute w-96 h-96 bottom-0 left-0 bg-accent/10 rounded-full blur-3xl" />
@@ -38,7 +37,7 @@ export function Contact() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-balance">¿Trabajamos juntos?</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-muted max-w-2xl mx-auto">
               Estoy disponible para proyectos full-time o freelance. ¡Hablemos de tu próximo proyecto!
             </p>
           </div>
@@ -49,21 +48,21 @@ export function Contact() {
               <CardContent className="p-8">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="space-y-2">
-                    <Label htmlFor="name">Nombre</Label>
-                    <Input id="name" placeholder="Tu nombre" required className="bg-background/50" />
+                    <Label htmlFor="name" className="text-white">Nombre</Label>
+                    <Input id="name" placeholder="Tu nombre" required className="bg-background/50 text-white"/>
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="email">Email</Label>
-                    <Input id="email" type="email" placeholder="tu@email.com" required className="bg-background/50" />
+                    <Label htmlFor="email" className="text-white">Email</Label>
+                    <Input id="email" type="email" placeholder="tu@email.com" required className="bg-background/50 text-white" />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="message">Mensaje</Label>
+                    <Label htmlFor="message" className="text-white">Mensaje</Label>
                     <Textarea
                       id="message"
                       placeholder="Cuéntame sobre tu proyecto..."
                       rows={5}
                       required
-                      className="bg-background/50 resize-none"
+                      className="bg-background/50 resize-none text-white"
                     />
                   </div>
                   <Button type="submit" className="w-full" size="lg" disabled={isSubmitting || isSuccess}>
@@ -92,10 +91,10 @@ export function Contact() {
                       <Mail className="h-6 w-6" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-lg mb-2">Email</h3>
+                      <h3 className="font-bold text-lg mb-2 text-white">Email</h3>
                       <a
                         href="mailto:juanmanuelcontreraszapata33@gmail.com"
-                        className="text-muted-foreground hover:text-primary transition-colors break-all"
+                        className="text-muted hover:text-primary transition-colors break-all"
                       >
                         juanmanuelcontreraszapata33@gmail.com
                       </a>
@@ -111,12 +110,12 @@ export function Contact() {
                       <Github className="h-6 w-6" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-lg mb-2">GitHub</h3>
+                      <h3 className="font-bold text-lg mb-2 text-white">GitHub</h3>
                       <a
                         href="https://github.com/juanmanuel"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-primary transition-colors"
+                        className="text-muted hover:text-primary transition-colors"
                       >
                         github.com/juanmanuel
                       </a>
@@ -132,12 +131,12 @@ export function Contact() {
                       <Linkedin className="h-6 w-6" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-lg mb-2">LinkedIn</h3>
+                      <h3 className="font-bold text-lg mb-2 text-white">LinkedIn</h3>
                       <a
                         href="https://linkedin.com/in/juanmanuel"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-primary transition-colors"
+                        className="text-muted hover:text-primary transition-colors"
                       >
                         linkedin.com/in/juanmanuel
                       </a>
@@ -147,7 +146,7 @@ export function Contact() {
               </Card>
 
               <div className="p-6 rounded-lg bg-primary/5 border border-primary/20">
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="text-sm text-muted leading-relaxed">
                   <strong className="text-foreground">Tiempo de respuesta:</strong> Generalmente respondo dentro de 24
                   horas durante días laborables.
                 </p>
