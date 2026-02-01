@@ -4,8 +4,9 @@ import { Button } from "@/src/components/ui/button"
 import { Input } from "@/src/components/ui/input"
 import { Textarea } from "@/src/components/ui/textarea"
 import { Label } from "@/src/components/ui/label"
-import { Mail, Github, Linkedin, Send, CheckCircle2 } from "lucide-react"
+import { Send, CheckCircle2 } from "lucide-react"
 import { Toaster } from "@/src/components/ui/sonner"
+import { socialLinks } from "@/src/scripts/social"
 
 
 export function Contact() {
@@ -84,66 +85,29 @@ export function Contact() {
 
             {/* Contact Info */}
             <div className="space-y-6">
-              <Card className="glass border-2 hover:border-primary/50 transition-colors">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-lg bg-primary/10 text-primary">
-                      <Mail className="h-6 w-6" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-lg mb-2 text-white">Email</h3>
-                      <a
-                        href="mailto:juanmanuelcontreraszapata33@gmail.com"
-                        className="text-muted hover:text-primary transition-colors break-all"
-                      >
-                        juanmanuelcontreraszapata33@gmail.com
-                      </a>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
 
-              <Card className="glass border-2 hover:border-primary/50 transition-colors">
+              {socialLinks.map((social) => (
+                 <Card key={social.name} className="glass border-2 hover:border-primary/50 transition-colors">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
                     <div className="p-3 rounded-lg bg-primary/10 text-primary">
-                      <Github className="h-6 w-6" />
+                      <social.icon className="h-6 w-6" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-lg mb-2 text-white">GitHub</h3>
+                      <h3 className="font-bold text-lg mb-2 text-white">{social.name}</h3>
                       <a
-                        href="https://github.com/juanmanuel"
+                        href={social.url}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-muted hover:text-primary transition-colors"
                       >
-                        github.com/juanmanuel
+                          {social.name === "Gmail" ? social.url.replace("mailto:", "") : social.url.replace("https://", "")}
                       </a>
                     </div>
                   </div>
                 </CardContent>
               </Card>
-
-              <Card className="glass border-2 hover:border-primary/50 transition-colors">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-lg bg-primary/10 text-primary">
-                      <Linkedin className="h-6 w-6" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-lg mb-2 text-white">LinkedIn</h3>
-                      <a
-                        href="https://linkedin.com/in/juanmanuel"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-muted hover:text-primary transition-colors"
-                      >
-                        linkedin.com/in/juanmanuel
-                      </a>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+              ))}
 
               <div className="p-6 rounded-lg bg-primary/5 border border-primary/20">
                 <p className="text-sm text-muted leading-relaxed">

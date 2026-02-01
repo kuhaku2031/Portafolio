@@ -36,8 +36,8 @@ export const projects: Project[] = [
       { icon: Bot, label: "IA integrada" },
     ],
     links: [
-      { label: "Ver Demo", href: "#", icon: ExternalLink  },
-      { label: "Código Backend", href: "#", icon: Github },
+      { label: "Ver Demo", href: "https://nexo-ai-page.vercel.app/", icon: ExternalLink  },
+      { label: "Github", href: "https://github.com/kuhaku2031/NexoAI-app.git", icon: Github },
       { label: "Caso de Estudio", href: "#", icon: FileText },
     ],
     featured: true,
@@ -53,8 +53,8 @@ export const projects: Project[] = [
       { icon: Bot, label: "SEO optimizado" },
     ],
     links: [
-      { label: "Ver Sitio", href: "#", icon: ExternalLink },
-      { label: "Código Fuente", href: "#", icon: Github },
+      { label: "Ver Sitio", href: "https://nexo-ai-page.vercel.app/", icon: ExternalLink },
+      { label: "Código Fuente", href: "https://github.com/kuhaku2031/NexoAI-page.git", icon: Github },
     ],
   },
   {

@@ -1,6 +1,7 @@
 import { Button } from "@/src/components/ui/button"
-import { Github, Linkedin, Mail, ArrowDown, Send } from "lucide-react"
+import { ArrowDown, Send, Download } from "lucide-react"
 import { useEffect, useState } from "react"
+import { socialLinks } from "@/src/scripts/social"
 
 const roles = ["Full-Stack Developer", "Mobile Developer", "React Native Expert", "Backend Engineer"]
 
@@ -62,6 +63,7 @@ export function HeroSection() {
 
       <div className="mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-20">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16">
+
           {/* Profile Image - Left side on desktop */}
           <div className="relative group shrink-0">
             <div className="absolute inset-0 bg-linear-to-r from-primary via-accent to-secondary rounded-full blur-xl opacity-75 group-hover:opacity-100 transition-opacity animate-glow" />
@@ -76,9 +78,7 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Content - Right side on desktop */}
           <div className="flex-1 text-center lg:text-left space-y-6">
-            {/* Title and Typewriter Effect */}
             <div className="space-y-4">
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-balance">
                 Juan Manuel Contreras
@@ -114,6 +114,7 @@ export function HeroSection() {
               </Button>
               <Button size="lg" variant="outline" asChild className="text-lg px-8 bg-transparent">
                 <a href="/cv.pdf" download>
+                  <Download className="h-4 w-4 mr-2" />
                   Descargar CV
                 </a>
               </Button>
@@ -121,31 +122,15 @@ export function HeroSection() {
 
             {/* Social Links */}
             <div className="flex gap-4 pt-4 justify-center lg:justify-start">
-              <Button variant="ghost" size="icon" asChild className="rounded-full hover:scale-110 transition-transform">
-                <a href="https://github.com/juanmanuel" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                  <Github className="h-5 w-5" />
+
+              {socialLinks.map((social) => (
+              <Button key={social.name} variant="ghost" size="icon" asChild className="rounded-full hover:scale-110 transition-transform">
+                <a href={social.url} target="_blank" rel="noopener noreferrer" aria-label={social.name}>
+                  <social.icon className="h-5 w-5" />
                 </a>
               </Button>
-              <Button variant="ghost" size="icon" asChild className="rounded-full hover:scale-110 transition-transform">
-                <a
-                  href="https://linkedin.com/in/juanmanuel"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin className="h-5 w-5" />
-                </a>
-              </Button>
-              <Button variant="ghost" size="icon" asChild className="rounded-full hover:scale-110 transition-transform">
-                <a
-                  href="mailto:juanmanuelcontreraszapata33@gmail.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Email"
-                >
-                  <Mail className="h-5 w-5" />
-                </a>
-              </Button>
+              )
+              )}
             </div>
           </div>
         </div>
@@ -153,8 +138,8 @@ export function HeroSection() {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex items-start justify-center p-2">
-          <div className="w-1.5 h-3 bg-muted-foreground/30 rounded-full" />
+        <div className="w-6 h-10 rounded-full border-2 border-muted/30 flex items-start justify-center p-2">
+          <div className="w-1.5 h-3 bg-muted/30 rounded-full" />
         </div>
       </div>
     </section>
