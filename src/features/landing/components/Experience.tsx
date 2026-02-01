@@ -59,11 +59,11 @@ const experiences: Experience[] = [
 
 export function Experience() {
   return (
-    <section id="experiencia" className="py-20 sm:py-28 bg-muted/30">
+    <section id="experiencia" className="py-20 sm:py-28 bg-jet-black/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-balance">Experiencia Profesional</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted max-w-2xl mx-auto">
             Mi trayectoria en el desarrollo de software y formación continua
           </p>
         </div>
@@ -71,16 +71,17 @@ export function Experience() {
         <div className="max-w-3xl mx-auto">
           <div className="relative">
             {/* Timeline Line */}
-            <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-accent to-primary" />
+            <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-linear-to-b from-primary via-accent to-primary"/>
 
             {/* Experience Cards */}
             <div className="space-y-12">
               {experiences.map((exp, idx) => (
                 <div key={exp.company} className="relative flex gap-8">
+
                   {/* Timeline Dot */}
                   <div className="absolute left-4 w-8 h-8 -translate-x-1/2 flex items-center justify-center">
                     <div
-                      className={`w-full h-full rounded-full bg-gradient-to-br ${exp.color} flex items-center justify-center shadow-lg ring-4 ring-background`}
+                      className={`w-full h-full rounded-full bg-linear-to-br ${exp.color} flex items-center justify-center shadow-lg ring-4 ring-background`}
                     >
                       <div className="text-white">{exp.icon}</div>
                     </div>
@@ -91,23 +92,23 @@ export function Experience() {
 
                   {/* Content Card */}
                   <Card
-                    className="flex-1 group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-2 hover:border-primary/50"
+                    className="flex-1 group bg-charcoal-blue hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-2 hover:border-primary/50 "
                     style={{ animationDelay: `${idx * 200}ms` }}
                   >
                     <CardContent className="p-6">
                       <div className="mb-3">
-                        <Badge variant="secondary" className="mb-2">
+                        <Badge variant="secondary" className="mb-2 text-ink-black bg-ash-grey/70 hover:bg-ash-grey/90">
                           {exp.period}
                         </Badge>
-                        <h3 className="text-xl font-bold group-hover:text-primary transition-colors">{exp.company}</h3>
+                        <h3 className="text-xl text-white font-bold group-hover:text-primary transition-colors">{exp.company}</h3>
                         <p className="text-sm text-primary font-medium">{exp.role}</p>
                       </div>
-                      <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{exp.description}</p>
+                      <p className="text-sm text-ash-grey mb-4 leading-relaxed">{exp.description}</p>
                       <ul className="space-y-2">
-                        {exp.achievements.map((achievement, i) => (
-                          <li key={i} className="text-sm flex items-start gap-2">
+                        {exp.achievements.map((achievement) => (
+                          <li key={achievement} className="text-sm flex items-start gap-2">
                             <span className="text-primary mt-1">▹</span>
-                            <span className="text-muted-foreground">{achievement}</span>
+                            <span className="text-muted">{achievement}</span>
                           </li>
                         ))}
                       </ul>

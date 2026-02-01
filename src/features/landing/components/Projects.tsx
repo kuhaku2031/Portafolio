@@ -111,7 +111,7 @@ export function Projects() {
 
                 <CardContent className="p-12 flex flex-col justify-between align-middle">
                   <div className="h-full">
-                    <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
+                    <h3 className="text-xl font-bold mb-2 group-hover:text-primary text-white transition-colors">{project.title}</h3>
                     <p className="text-sm text-muted leading-relaxed mb-4">{project.description}</p>
 
                     {/* Tech Tags */}
